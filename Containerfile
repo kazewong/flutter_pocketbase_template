@@ -40,6 +40,10 @@ USER flutteruser
 # Add Flutter to PATH
 ENV PATH="/app/flutter/bin:${PATH}"
 
+RUN wget https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip && \
+    unzip pocketbase_${PB_VERSION}_linux_amd64.zip -d /usr/local/bin && \
+    rm pocketbase_${PB_VERSION}_linux_amd64.zip
+
 # Enable Flutter web support
 # RUN flutter config --enable-web
 
